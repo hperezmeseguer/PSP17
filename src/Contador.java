@@ -5,7 +5,7 @@ public class Contador extends Thread{
     private char consonante;
     private String texto;
     private int contador;
-    private static int contadorTotal = 0;
+    public static int contadorTotal = 0;
 
     public Contador(char consonante, String texto){
 
@@ -29,6 +29,13 @@ public class Contador extends Thread{
             contadorTotal += contador;
         }
 
-        System.out.println("La consonante " + consonante + " aparece " + contador + " veces");
+        System.out.println("El hilo" + Thread.currentThread().getName() + " contó que la letra se repite " + contador + " veces");
+    }
+
+    public static void main (String[] args) throws InterruptedException{
+
+        Scanner teclado = new Scanner (System.in);
+
+
     }
 }
