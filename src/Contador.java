@@ -51,5 +51,29 @@ public class Contador extends Thread{
 
             consonantes[i] = letra.charAt(0);
         }
+
+
+        System.out.println("Escribe un texto:");
+        String texto = teclado.nextLine();
+
+        texto = texto.repeat(2000);
+
+        Contador[] hilos = new Contador[5];
+        
+        for (int i = 0; i < hilos.length; i++){
+
+            hilos[i] = new Contador(consonantes[i], texto);
+            hilos[i].setName("Hilo" + consonantes[i]);
+            hilos[i].start();
+        }
+
+        for (int i = 0; i < hilos.length; i++){
+
+            hilos[i].join();
+        }
+
+        System.out.println ("Suma de todas las consonantes comprobadas: " + contadorTotal);
+
+        teclado.close();
     }
 }
