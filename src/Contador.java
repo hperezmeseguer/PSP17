@@ -36,6 +36,20 @@ public class Contador extends Thread{
 
         Scanner teclado = new Scanner (System.in);
 
+        char[] consonantes = new char[5];
 
+        for (int i = 0; i < consonantes.length; i++){
+            
+            System.out.println("Dime una consonante: ");
+            String letra = teclado.nextLine();
+
+            while (letra.length() != 1 || !Character.isLetter(letra.charAt(0)) || "aeiou".indexOf(letra.charAt(0)) != -1){
+
+                System.out.println("Error. Dime una CONSONANTE válida:");
+                letra = teclado.nextLine();
+            }
+
+            consonantes[i] = letra.charAt(0);
+        }
     }
 }
