@@ -29,7 +29,7 @@ public class Contador extends Thread{
             contadorTotal += contador;
         }
 
-        System.out.println("El hilo" + Thread.currentThread().getName() + " contó que la letra se repite " + contador + " veces");
+        System.out.println("El hilo " + Thread.currentThread().getName() + " contó que la letra se repite " + contador + " veces");
     }
 
     public static void main (String[] args) throws InterruptedException{
